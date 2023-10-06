@@ -1,0 +1,57 @@
+.logo {
+  display: none;
+}
+
+.auth {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth .backgroundImage {
+  width: 0;
+}
+
+.auth > .outlet {
+  padding: 1rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 25rem) {
+  .auth > .outlet {
+    max-width: 17rem;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .logo {
+    position: absolute;
+    display: flex;
+    top: 1rem;
+    left: 1rem;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .logo svg {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .logo span {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin: 0 0.25rem;
+  }
+
+  .auth {
+    background-color: var(--color-background-large);
+  }
+
+  .auth .backgroundImage {
+    width: min(90vh, 90vw);
+    height: min(90vh, 90vw);
+  }
+}

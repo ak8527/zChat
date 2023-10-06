@@ -1,0 +1,86 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+:root {
+  /* Colors */
+  --primary-light: #50577a;
+  --primary-dark: #404258;
+  --light: #ffffff;
+  --dark: #000000;
+  --shades-50: #f0f1f4;
+  --shades-100: #d3d4df;
+  --shades-200: #b5b7c9;
+  --shades-300: #989ab4;
+  --shades-400: #7a7d9e;
+  --shades-500: #616485;
+  --shades-600: #4b4e67;
+  --shades-700: #36374a;
+  --shades-800: #20212c;
+  --shades-900: #0b0b0f;
+  --danger-300: #ffb9b9;
+  --danger-500: #ff5d5d;
+  --danger-700: #ff0000;
+
+  /* Screen Breakpoint  */
+  --breakpoint: 40rem;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+body {
+  margin: 0;
+  --color-primary: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-text: var(--shades-900);
+  --color-secondary-text: var(--shades-300);
+  --color-title-text: var(--shades-900);
+  --color-subtitle-text: var(--shades-300);
+  --color-label-text: var(--shades-200);
+  --color-background: var(--light);
+  --color-background-large: #fbfbfb;
+  --color-input-hover: var(--shades-50);
+  --color-border: var(--shades-200);
+  --color-button-bg: var(--primary-light);
+  --color-button-text: var(--shades-50);
+  --color-button-hover: var(--shades-600);
+  --color-box-shadow: var(--shades-200);
+  --color-border-error: var(--danger-500);
+  --color-background-error: var(--danger-300);
+  --color-error: var(--danger-700);
+
+  /* Default property */
+  color: var(--color-primary-text);
+
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#root {
+  /* width: 100vw;
+  height: 100vh; */
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(80, 87, 122, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(80, 87, 122, 0.3);
+  border-radius: 1rem;
+  border: transparent;
+}

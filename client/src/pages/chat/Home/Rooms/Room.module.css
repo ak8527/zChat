@@ -1,0 +1,63 @@
+.room {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  cursor: default;
+  color: var(--color-primary-text);
+}
+
+.room > .image {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.room > .link {
+  flex: 1;
+  text-decoration: none;
+  display: grid;
+  grid-template-areas:
+    'roomname date'
+    'text text';
+  color: inherit;
+}
+
+.link > span {
+  grid-area: roomname;
+  font-size: 1rem;
+  font-weight: 500;
+  align-self: end;
+}
+
+.link > time {
+  grid-area: date;
+  font-size: 0.75rem;
+  justify-self: end;
+  align-self: end;
+}
+
+.link > div {
+  grid-area: text;
+  max-width: 90%;
+  /* text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; */
+  line-break: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  align-self: start;
+  font-size: 0.85rem;
+}
+
+.room:hover,
+.room:active {
+  color: var(--light);
+  background-color: var(--color-primary);
+}
+
+.isActive {
+  color: var(--light);
+  background-color: var(--color-primary);
+}

@@ -1,0 +1,14 @@
+.rooms {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.rooms > .userList {
+  flex: 1 1 1px;
+  overflow-y: scroll;
+}
+
+.userList::-webkit-scrollbar {
+  display: none;
+}

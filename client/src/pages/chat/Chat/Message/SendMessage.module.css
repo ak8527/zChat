@@ -1,0 +1,74 @@
+.sendMessageContainer {
+  width: 100%;
+  container-type: inline-size;
+  z-index: 1;
+}
+
+.sendMessage {
+  display: flex;
+  max-width: 80%;
+  gap: 0.125rem;
+  margin: 0 0 0.125rem auto;
+  justify-content: flex-end;
+}
+
+.sendMessage > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sendMessage .image {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.sendMessage .username {
+  align-self: flex-end;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.sendMessage .message {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--color-primary);
+  --border-radius: 0.5rem 0 0.5rem 0.5rem;
+  --color-audio: var(--shades-500);
+  --color-link: var(--color-primary);
+  --color-message: var(--shades-100);
+}
+
+.message.borderAllRounded {
+  --border-radius: 0.5rem;
+}
+
+.username.hideUserName {
+  display: none;
+}
+
+.image.hideImage {
+  display: none;
+}
+
+.message.groupAuthorSame {
+  margin-right: 1.5rem;
+}
+
+@container (width > 25rem) {
+  .sendMessage .image {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .message.groupAuthorSame {
+    margin-right: 2rem;
+  }
+}
+
+@container (width > 40rem) {
+  .sendMessage {
+    max-width: 60%;
+  }
+}

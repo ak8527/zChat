@@ -1,0 +1,43 @@
+.audio {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.audio > audio {
+  display: none;
+}
+
+.audio > .timeProgress {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+}
+
+.audio > .control,
+.audio > .volume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control > svg,
+.volume > svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.audio > input[type='range'] {
+  accent-color: var(--color-audio);
+  margin: auto 0;
+  height: 0.25rem;
+  border: none;
+  outline: none;
+  width: 1px;
+  flex: 1;
+}
+
+.audio path {
+  fill: var(--color-audio);
+}

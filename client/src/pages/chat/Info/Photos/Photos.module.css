@@ -1,0 +1,22 @@
+.photos {
+  width: 100%;
+}
+
+.photos > div {
+  margin-bottom: 0.5rem;
+}
+
+.photos > ul {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.photos li {
+  flex: 0 0 20%;
+}
+
+.photos > ul::-webkit-scrollbar {
+  display: none;
+}

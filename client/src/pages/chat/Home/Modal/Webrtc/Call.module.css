@@ -1,0 +1,44 @@
+.call {
+  width: 100%;
+  background: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 3rem;
+  height: 100%;
+}
+
+.call .image {
+  width: 6rem;
+  height: 6rem;
+}
+
+.call .username {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: var(--color-primary-text);
+}
+
+.call .calling {
+  margin-top: 0.5rem;
+  color: var(--color-secondary-text);
+}
+
+.call .decline {
+  position: absolute;
+  bottom: 3rem;
+  width: 3rem;
+}
+
+@media screen and (min-width: 25rem) {
+  .call {
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  .call .image {
+    width: 6rem;
+  }
+}

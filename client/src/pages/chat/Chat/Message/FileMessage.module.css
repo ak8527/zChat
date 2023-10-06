@@ -1,0 +1,49 @@
+.file {
+  display: grid;
+  grid-template-areas:
+    'card name name name '
+    'card size type time';
+  align-items: center;
+  column-gap: 0.5rem;
+  grid-template-columns: auto auto auto 1fr;
+  padding: 0.5rem;
+  background: var(--color-message);
+  border-radius: var(--border-radius);
+}
+
+.file > .card {
+  grid-area: card;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  /* background: rgba(0, 0, 0, 0.05); */
+}
+
+.file > .name {
+  grid-area: name;
+  text-decoration: none;
+  color: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.file > .size {
+  grid-area: size;
+  font-size: 0.8rem;
+}
+
+.file > .type {
+  grid-area: type;
+  font-size: 0.8rem;
+  display: list-item;
+  list-style-type: disc;
+  margin-left: 0.8rem;
+}
+
+.file > .time {
+  grid-area: time;
+  font-size: 0.8rem;
+  justify-self: end;
+}

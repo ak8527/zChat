@@ -1,0 +1,112 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  background: var(--light);
+  outline: none;
+  padding: 1rem;
+  width: 90vw;
+}
+
+.modal > nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin: 1rem 1rem 0 1rem; */
+  color: var(--color-primary-text);
+  margin-bottom: 1rem;
+}
+
+.modal .circularProgressBar {
+  /* width: 80vw; */
+  width: 100%;
+  height: 20vh;
+  padding: 2vw;
+  border: 1px dashed var(--color-border);
+  border-radius: 0.5rem;
+}
+
+.modal .dragAndDrop {
+  /* width: 80vw; */
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed var(--color-border);
+  border-radius: 0.5rem;
+  color: var(--color-secondary-text);
+}
+
+.modal .error {
+  /* width: 80vw; */
+  width: 100%;
+  font-size: 1rem;
+  color: red;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.dragAndDrop.dragActive {
+  border-color: var(--color-primary);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.nav svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.25rem;
+}
+
+.nav svg:hover,
+.nav svg:focus,
+.nav svg:active {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.cloudSvg svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.dragAndDrop .fileSelect {
+  font-size: 1rem;
+}
+
+.fileSelect span {
+  color: var(--color-primary);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.dragAndDrop .fileDrop {
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 25rem) {
+  .modal {
+    width: 30vw;
+  }
+  /* .modal .dragAndDrop {
+    width: 30vw;
+    color: var(--color-secondary-text);
+  }
+
+  .modal .circularProgressBar {
+    width: 30vw;
+  } */
+}

@@ -1,0 +1,75 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* z-index: 100; */
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  padding: 0;
+  background: var(--color-background);
+  outline: none;
+}
+
+.modal > nav {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  padding: 1rem;
+  gap: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal .blockedrooms {
+  flex: 100%;
+  overflow-y: scroll;
+  list-style: none;
+}
+
+.modal .button {
+  padding: 1rem;
+}
+
+.blockedrooms .blockedroom {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.blockedroom > .roomname {
+  flex: 100%;
+}
+
+.blockedroom > .image {
+  width: 2rem;
+  height: 2rem;
+}
+
+.modal .close {
+  display: grid;
+  place-items: center;
+}
+
+.close > svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media screen and (min-width: 25rem) {
+  .modal {
+    width: 50%;
+    height: 70%;
+  }
+}

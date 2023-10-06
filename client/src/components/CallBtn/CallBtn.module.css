@@ -1,0 +1,59 @@
+.btn {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accept {
+  background: var(--color-primary);
+}
+
+.decline {
+  background: var(--danger-500);
+}
+
+.accept:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.decline:hover {
+  background-color: var(--danger-700);
+}
+
+.camera,
+.speaker,
+.mic {
+  background: var(--color-primary);
+}
+
+.camera.isActive,
+.speaker.isActive,
+.mic.isActive {
+  background-color: var(--danger-500);
+}
+
+.camera.isActive:hover,
+.speaker.mic.isActive:hover,
+.mic.mic.isActive.hover,
+.camera.isActive:focus,
+.speaker.mic.isActive:focus,
+.mic.mic.isActive.focus {
+  background-color: var(--danger-700);
+}
+
+/* .camera > svg,
+.speaker > svg,
+.mic > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+} */
+
+.camera path,
+.speaker path,
+.mic path {
+  fill: var(--light);
+}

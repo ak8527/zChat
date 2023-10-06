@@ -1,0 +1,58 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: flex-start;
+  z-index: 100;
+}
+
+.modal {
+  width: 100vw;
+  margin: 1rem;
+  outline: none;
+  display: flex;
+  justify-content: center;
+}
+
+.modal > .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--light);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.modal > .success {
+  background: var(--color-primary);
+}
+
+.modal > .error {
+  background: var(--danger-500);
+}
+
+.container > .closeSvg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.closeSvg > svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.closeSvg path {
+  fill: var(--light);
+}
+
+@media screen and (min-width: 25rem) {
+  .modal > .container {
+    width: fit-content;
+  }
+}

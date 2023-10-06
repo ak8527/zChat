@@ -1,0 +1,19 @@
+.links {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.links > ul {
+  flex: 1 1 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.75rem;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.links > ul::-webkit-scrollbar {
+  display: none;
+}

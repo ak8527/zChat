@@ -1,0 +1,41 @@
+.search {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.search > .input {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem;
+}
+
+.search > ul {
+  flex: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.search > ul::-webkit-scrollbar {
+  display: none;
+}
+
+.input svg {
+  width: 1rem;
+  cursor: pointer;
+}
+
+.input > input {
+  color: var(--color-primary-text);
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+}
+
+.input > input::placeholder {
+  color: var(--color-border);
+}

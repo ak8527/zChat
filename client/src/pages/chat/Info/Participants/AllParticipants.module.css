@@ -1,0 +1,23 @@
+.participants {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.participants > ul {
+  flex: 1 1 1px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.participants > div {
+  margin: 1rem;
+}
+
+.participants > ul::-webkit-scrollbar {
+  display: none;
+}

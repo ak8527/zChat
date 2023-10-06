@@ -1,0 +1,70 @@
+.receivedMessageContainer {
+  width: 100%;
+  container-type: inline-size;
+}
+
+.receivedMessage {
+  display: flex;
+  max-width: 80%;
+  margin-bottom: 0.125rem;
+  gap: 0.125rem;
+}
+
+.receivedMessage > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.receivedMessage .image {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.receivedMessage .username {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.receivedMessage .message {
+  display: flex;
+  color: var(--light);
+  --border-radius: 0 0.5rem 0.5rem 0.5rem;
+  --color-audio: var(--shades-100);
+  --color-link: var(--light);
+  --color-message: var(--color-primary);
+}
+
+.message.borderAllRounded {
+  --border-radius: 0.5rem;
+}
+
+.username.hideUserName {
+  display: none;
+}
+
+.image.hideImage {
+  display: none;
+}
+
+.message.groupAuthorSame {
+  margin-left: 1.5rem;
+}
+
+@container (width > 25rem) {
+  .receivedMessage .image {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .message.groupAuthorSame {
+    margin-left: 2rem;
+  }
+}
+
+@container (width > 40rem) {
+  .receivedMessage {
+    max-width: 60%;
+  }
+}

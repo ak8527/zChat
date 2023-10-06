@@ -1,0 +1,37 @@
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+}
+
+.menu {
+  margin: 2rem 0.5rem;
+  padding: 0.25rem 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  background: var(--color-background);
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  list-style: none;
+  z-index: 100;
+}
+
+.menu > li {
+  padding: 0.5rem 1rem;
+  color: var(--color-primary-text);
+  cursor: pointer;
+  width: 100%;
+}
+
+.menu > li:active,
+.menu > li:hover,
+.menu > li:focus {
+  background: var(--color-primary);
+  color: white;
+}

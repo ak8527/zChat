@@ -1,0 +1,44 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.page > span {
+  font-size: 4rem;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.page > div {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-primary-text);
+}
+
+.page > p {
+  font-size: 1rem;
+  color: var(--color-secondary-text);
+  text-align: center;
+}
+
+.page > button {
+  border-radius: 5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.page > button:hover,
+.page > button.active {
+  background: var(--color-primary-dark);
+}

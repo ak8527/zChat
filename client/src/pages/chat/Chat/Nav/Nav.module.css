@@ -1,0 +1,79 @@
+.nav {
+  display: grid;
+  grid-template-areas:
+    'backarrow image roomname videoCall audioCall   kebabmenu'
+    'backarrow image status videoCall audioCall kebabmenu';
+  justify-content: start;
+  grid-template-columns: auto auto 1fr auto auto auto;
+  align-items: center;
+  padding: 0.5rem;
+  column-gap: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  /* position: sticky; */
+  /* top: 0; */
+}
+
+.nav > .backArrow {
+  grid-area: backarrow;
+  /* margin-right: 0.5rem; */
+}
+
+.nav > .image {
+  grid-area: image;
+  width: 2rem;
+  height: 2rem;
+  /* margin-right: 0.5rem; */
+}
+
+.nav > .roomName {
+  grid-area: roomname;
+  align-self: end;
+  color: var(--color-title-text);
+}
+
+.nav > .status {
+  grid-area: status;
+  align-self: start;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--color-subtitle-text);
+}
+
+.nav > .videoCall {
+  grid-area: videoCall;
+  display: flex;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+
+.nav > .audioCall {
+  grid-area: audioCall;
+  display: flex;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+
+.nav > .kebabMenu {
+  grid-area: kebabmenu;
+  display: grid;
+  justify-content: center;
+}
+
+.backArrow > svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media screen and (min-width: 25rem) {
+  .nav {
+    grid-template-areas:
+      'image roomname videoCall audioCall kebabmenu'
+      'image status videoCall audioCall kebabmenu';
+    grid-template-columns: auto 1fr auto auto auto;
+  }
+
+  .nav > .backArrow {
+    display: none;
+  }
+}

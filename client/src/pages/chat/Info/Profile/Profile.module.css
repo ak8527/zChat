@@ -1,0 +1,29 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 0.5rem; */
+}
+
+.profile > .profileImage {
+  width: 30%;
+  height: auto;
+  vertical-align: middle;
+  margin-bottom: 0.25rem;
+}
+
+.profile > .roomname {
+  color: var(--color-primary-text);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.profile > .email {
+  color: var(--color-subtitle-text);
+  font-size: 0.9rem;
+  text-align: center;
+}

@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.container > .title {
+  color: var(--shades-600);
+}
+
+.container > .size {
+  font-size: 0.9rem;
+  color: var(--shades-400);
+  flex: 1;
+}
+
+.container > .viewAll {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  position: cursor;
+}
+
+.viewAll > span {
+  font-size: 0.9rem;
+  color: var(--shades-400);
+}

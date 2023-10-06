@@ -1,0 +1,30 @@
+.container {
+  position: relative;
+}
+
+.container .image {
+  width: 100%;
+  height: 100%;
+}
+
+.container .editSvg {
+  width: 25%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.25rem;
+  border-width: 1%;
+  border-color: var(--light);
+  border-style: solid;
+  background: var(--color-border);
+}
+
+.container > input {
+  display: none;
+}

@@ -1,0 +1,13 @@
+.files {
+  width: 100%;
+}
+
+.files > div {
+  margin-bottom: 0.5rem;
+}
+
+.files > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

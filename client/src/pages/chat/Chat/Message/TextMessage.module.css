@@ -1,0 +1,14 @@
+.textMessage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  align-items: baseline;
+  background: var(--color-message);
+  border-radius: var(--border-radius);
+}
+
+.textMessage > time {
+  font-size: 0.75rem;
+  margin-left: auto;
+}
