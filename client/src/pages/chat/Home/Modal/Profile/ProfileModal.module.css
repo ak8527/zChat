@@ -44,14 +44,14 @@
   color: var(--light);
   /* padding: 0.25rem 0.5rem; */
   border-radius: 0.25rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 500;
   cursor: pointer;
 }
 
 .nav svg {
-  width: 1rem;
-  height: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
   cursor: pointer;
 }
 
@@ -85,7 +85,7 @@
   text-align: center;
   outline: none;
   border: none;
-  font-size: 1rem;
+  font-size: 1.25rem;
   width: 100%;
   border-bottom: 1px solid var(--color-border);
   margin: 0.75rem 0;
@@ -93,7 +93,7 @@
 
 .info > .email {
   color: var(--color-subtitle-text);
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .info > p {
