@@ -12,7 +12,7 @@ import userRoutes from './routes/user.routes.js';
 import chatRoutes from './routes/chat.routes.js';
 import initWs from './services/websocket.js';
 import isAuth from './middlewares/isAuth.middlewares.js';
-import serviceAccount from './firebase.json' assert { type: 'json' };
+// import serviceAccount from './firebase.json' assert { type: 'json' };
 
 // Configure npmlog
 log.enableColor();
@@ -34,8 +34,8 @@ app.use(cors);
 
 // firebase app initialization
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  // credential: admin.credential.cert(JSON.parse()),
+  // credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_CONFIG)),
   storageBucket: process.env.BUCKET_NAME,
 });
 
