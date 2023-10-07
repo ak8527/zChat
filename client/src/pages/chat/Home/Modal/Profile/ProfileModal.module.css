@@ -40,14 +40,14 @@
   align-items: center;
 }
 
-.nav span {
-  /* color: var(--light); */
-  /* padding: 0.25rem 0.5rem; */
-  /* border-radius: 0.25rem; */
-  /* font-size: 1rem; */
-  /* font-weight: 500; */
-  /* cursor: pointer; */
-}
+/* .nav span { */
+/* color: var(--light); */
+/* padding: 0.25rem 0.5rem; */
+/* border-radius: 0.25rem; */
+/* font-size: 1rem; */
+/* font-weight: 500; */
+/* cursor: pointer; */
+/* } */
 
 .nav > .title {
   color: var(--color-primary-text);
