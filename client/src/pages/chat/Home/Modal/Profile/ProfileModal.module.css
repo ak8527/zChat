@@ -49,6 +49,11 @@
   cursor: pointer;
 }
 
+.nav > .title {
+  color: var(--color-primary-text);
+  cursor: none;
+}
+
 .nav svg {
   width: 1rem;
   height: 1rem;
@@ -93,7 +98,7 @@
 
 .info > .email {
   color: var(--color-subtitle-text);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
 }
 
 .info > p {

@@ -102,6 +102,7 @@ const ProfileModal = ({ isOpen, closeModal }) => {
                   ? { visibility: 'hidden' }
                   : { visibility: 'visible' }
               }
+              className={styles.title}
             >
               Profile
             </span>
