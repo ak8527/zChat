@@ -41,12 +41,12 @@
 }
 
 .nav span {
-  color: var(--light);
+  /* color: var(--light); */
   /* padding: 0.25rem 0.5rem; */
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
+  /* border-radius: 0.25rem; */
+  /* font-size: 1rem; */
+  /* font-weight: 500; */
+  /* cursor: pointer; */
 }
 
 .nav > .title {
@@ -62,6 +62,8 @@
 
 .nav .edit {
   color: var(--color-primary);
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .nav > .update {
@@ -94,11 +96,13 @@
   width: 100%;
   border-bottom: 1px solid var(--color-border);
   margin: 0.75rem 0;
+  font-weight: 500;
 }
 
 .info > .email {
   color: var(--color-subtitle-text);
   font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .info > p {
