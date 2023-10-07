@@ -8,6 +8,7 @@
 .textField label {
   color: var(--color-primary-text);
   /* font-size: 1.2rem; */
+  font-size: 1rem;
   width: 100%;
 }
 
@@ -23,8 +24,10 @@
 }
 
 .input > input {
-  padding: 0.75rem 0.75rem;
+  /* padding: 0.75rem 0.75rem; */
+  padding: 0.75rem;
   /* font-size: 1.2rem; */
+  font-size: 1rem;
   border: none;
   outline: none;
   background: none;
@@ -48,8 +51,8 @@
 }
 
 .passwordSvg > svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .error > .input,
@@ -61,13 +64,14 @@
 
 .error > p {
   color: var(--color-error);
+  font-size: 0.9rem;
 }
 
 .error path {
   fill: var(--color-error);
 }
 
-@media screen and (min-width: 25rem) {
+/* @media screen and (min-width: 25rem) {
   .textField > label {
     font-size: 1rem;
   }
@@ -89,4 +93,4 @@
   .error > p {
     font-size: 0.8rem;
   }
-}
+} */

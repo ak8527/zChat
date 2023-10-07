@@ -28,7 +28,6 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(postLogin.fulfilled, (state, { payload }) => {
-        console.log('Access Token:', payload);
         state.accessToken = payload?.data?.accessToken;
         state.error = null;
       })
