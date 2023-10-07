@@ -2,6 +2,7 @@ import admin from 'firebase-admin';
 import cookieParser from 'cookie-parser';
 import express from 'express';
 import log from 'npmlog';
+import dotenv from 'dotenv';
 
 import dbConnect from './dbConnect.js';
 import cors from './middlewares/cors.middlewares.js';
@@ -11,13 +12,16 @@ import userRoutes from './routes/user.routes.js';
 import chatRoutes from './routes/chat.routes.js';
 import initWs from './services/websocket.js';
 import isAuth from './middlewares/isAuth.middlewares.js';
-import serviceAccount from './firebase.json' assert { type: 'json' };
+// import serviceAccount from './firebase.json' assert { type: 'json' };
 
 // Configure npmlog
 log.enableColor();
 
 // init app
 const app = express();
+
+// config dotenv
+dotenv.config();
 
 // built-in middleware for json
 app.use(express.json());
@@ -30,7 +34,8 @@ app.use(cors);
 
 // firebase app initialization
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
+  // credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_CONFIG)),
   storageBucket: process.env.BUCKET_NAME,
 });
 
