@@ -4,6 +4,8 @@
   padding: 0.5rem;
   gap: 0.5rem;
   align-items: center;
+  position: sticky;
+  top: 0;
 }
 
 .nav > span {

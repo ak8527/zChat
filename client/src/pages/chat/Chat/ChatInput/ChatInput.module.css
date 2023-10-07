@@ -5,6 +5,8 @@
   gap: 0.125rem;
   border-top: 1px solid var(--color-border);
   background: var(--light);
+  position: sticky;
+  bottom: 0;
   --fill: var(--color-border);
 }
 
@@ -62,10 +64,8 @@
   fill: var(--fill);
 }
 
-.send:active,
 .send:hover,
 .send:focus,
-.link:active,
 .link:hover,
 .link:focus {
   background: var(--color-primary);
