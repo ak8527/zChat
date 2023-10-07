@@ -53,9 +53,9 @@
   }
 } */
 
-@container (width > 25rem) {
+@container (min-width: 25rem) {
   .image {
     max-width: 60%;
-    margin-left: auto;
+    /* margin-left: auto; */
   }
 }
