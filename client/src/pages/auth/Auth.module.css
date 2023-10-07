@@ -17,6 +17,10 @@
 .auth > .outlet {
   padding: 1rem;
   width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (min-width: 25rem) {
