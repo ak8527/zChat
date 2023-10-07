@@ -40,10 +40,9 @@
   align-items: center;
 }
 
-.nav > .title {
+.nav .title {
   color: var(--color-primary-text);
   font-weight: 500;
-  cursor: none;
 }
 
 .nav svg {
