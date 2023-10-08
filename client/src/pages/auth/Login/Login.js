@@ -47,8 +47,10 @@ const Login = () => {
       <div className={styles.logo}>
         <BrandLogoSvg />
       </div>
-      <div className={styles.title}>Welcome back</div>
-      <div className={styles.subtitle}>Please enter your details</div>
+      <div>
+        <div className={styles.title}>Welcome back</div>
+        <div className={styles.subtitle}>Please enter your details</div>
+      </div>
       <Error />
       <form onSubmit={handleSubmit} className={styles.form}>
         <TextField

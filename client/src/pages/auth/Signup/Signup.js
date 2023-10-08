@@ -40,11 +40,11 @@ const Signup = () => {
   }
 
   return (
-    <div>
+    <div className={styles.signup}>
       <div className={styles.logo}>
         <BrandLogoSvg />
       </div>
-      <h1 className={styles.title}>Create an account</h1>
+      <p className={styles.title}>Create an account</p>
       <Error />
       <form onSubmit={handleSubmit} className={styles.form}>
         <TextField
