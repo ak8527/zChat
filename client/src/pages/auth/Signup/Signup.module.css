@@ -28,6 +28,7 @@
 
 .login {
   text-align: center;
+  font-size: 0.8rem;
 }
 
 .login a {
@@ -48,10 +49,6 @@
 
   .title {
     font-size: 1.5rem;
-  }
-
-  .login {
-    font-size: 0.8rem;
   }
 
   .form {
