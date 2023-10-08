@@ -19,10 +19,6 @@
   margin-bottom: 0.5rem;
 }
 
-.form div {
-  margin-bottom: 0.25rem;
-}
-
 .form button {
   margin-top: 0.5rem;
 }
@@ -60,10 +56,6 @@
   .subtitle {
     font-size: 0.8rem;
   }
-
-  /* .form div {
-    margin-bottom: 0.25rem;
-  } */
 
   .forgotPassword a {
     font-size: 0.8rem;

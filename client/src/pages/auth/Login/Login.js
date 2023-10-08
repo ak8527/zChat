@@ -43,12 +43,12 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <div className={styles.login}>
       <div className={styles.logo}>
         <BrandLogoSvg />
       </div>
-      <h1 className={styles.title}>Welcome back</h1>
-      <h2 className={styles.subtitle}>Please enter your details</h2>
+      <div className={styles.title}>Welcome back</div>
+      <div className={styles.subtitle}>Please enter your details</div>
       <Error />
       <form onSubmit={handleSubmit} className={styles.form}>
         <TextField

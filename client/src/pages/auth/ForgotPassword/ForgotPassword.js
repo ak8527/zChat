@@ -35,10 +35,10 @@ const ForgotPassword = () => {
 
   return (
     <div className={styles.forgotPwd}>
-      <h1>
+      <div className={styles.title}>
         <div>Forgot</div>
         <div>Password?</div>
-      </h1>
+      </div>
       <Error />
       <form onSubmit={handleSubmit} className={styles.form}>
         <TextField

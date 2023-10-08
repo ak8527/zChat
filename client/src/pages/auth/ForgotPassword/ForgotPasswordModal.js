@@ -30,8 +30,8 @@ const ForgotPasswordModal = ({ isOpen, closeModal }) => {
       shouldCloseOnOverlayClick={true}
     >
       <ResetEmailSvg />
-      <h1>Check your mail</h1>
-      <h2>We have sent password reset instruction to your email</h2>
+      <div>Check your mail</div>
+      <p>We have sent password reset instruction to your email</p>
     </Modal>
   );
 };

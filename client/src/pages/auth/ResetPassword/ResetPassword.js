@@ -43,7 +43,7 @@ const ResetPassword = () => {
         <Navigate to={'/login'} />
       ) : (
         <div className={styles.resetPwd}>
-          <h1>Create new password</h1>
+          <span>Create new password</span>
           <Error />
           <form onSubmit={handleSubmit} className={styles.form}>
             <TextField
