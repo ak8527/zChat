@@ -16,8 +16,6 @@ const WebrtcModal = () => {
   const { sdp, error, status, callType, receiver, candidates, roomId } =
     webrtcState;
 
-  console.log('Status:', status);
-
   const declineCall = useCallback(
     (status) => {
       if (roomId && receiver?._id) {

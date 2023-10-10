@@ -19,8 +19,8 @@ import Image from '../../../../components/Image/Image';
 import Loader from '../../../../components/Loader/Loader';
 import VideoCallSvg from '../../../../components/Svg/VideoCallSvg';
 import AudioCallSvg from '../../../../components/Svg/AudioCallSvg';
-import styles from './Nav.module.css';
 import getMediaStream from '../../../../utils/mediaStream';
+import styles from './Nav.module.css';
 
 const Nav = () => {
   const { id } = useParams();
@@ -177,28 +177,31 @@ const Nav = () => {
         )}
         <span className={styles.kebabMenu} onClick={() => setShowMenu(true)}>
           <KebabMenu />
+          {showMenu && (
+            <Menu
+              isGroup={room?.isGroup}
+              onClose={() => {
+                console.log('Overlay Click...');
+                setShowMenu(false);
+              }}
+              onLeave={() => {
+                setShowMenu(false);
+                setIsLoading(true);
+                setIsLeave(true);
+              }}
+              onBlock={() => {
+                setShowMenu(false);
+                setIsLoading(true);
+                setIsBlock(true);
+              }}
+              onNavigate={() => {
+                setShowMenu(false);
+                if (!location.pathname.includes('info'))
+                  navigate(`${location.pathname}/info`);
+              }}
+            />
+          )}
         </span>
-        {showMenu && (
-          <Menu
-            isGroup={room?.isGroup}
-            onClose={() => setShowMenu(false)}
-            onLeave={() => {
-              setShowMenu(false);
-              setIsLoading(true);
-              setIsLeave(true);
-            }}
-            onBlock={() => {
-              setShowMenu(false);
-              setIsLoading(true);
-              setIsBlock(true);
-            }}
-            onNavigate={() => {
-              setShowMenu(false);
-              if (!location.pathname.includes('info'))
-                navigate(`${location.pathname}/info`);
-            }}
-          />
-        )}
       </nav>
       <Loader isOpen={isLoading} />
     </>

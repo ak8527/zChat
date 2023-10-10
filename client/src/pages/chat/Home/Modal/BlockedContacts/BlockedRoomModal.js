@@ -20,32 +20,37 @@ const BlockedRoomModal = ({ isOpen, closeModal }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (!isOpen) return;
-    dispatch(getBlockedRooms())
-      .unwrap()
-      .then((res) => {
-        console.log('BlockedRoomList:', res);
-        setBlockedRoomsList([...res.data.blockedRooms]);
-      })
-      .catch((err) => console.log('Error:', err.message));
+    if (isOpen) {
+      dispatch(getBlockedRooms())
+        .unwrap()
+        .then((res) => {
+          console.log('BlockedRoomList:', res);
+          setBlockedRoomsList([...res.data.blockedRooms]);
+        })
+        .catch((err) => console.log('Error:', err.message));
+    }
   }, [dispatch, isOpen]);
 
   useEffect(() => {
-    if (!isLoading) return;
-    const unblockRoomSet = unblockRef.current.values();
-    const blockedRoomsId = Array.from(unblockRoomSet);
-    const data = { blockedRoomsId: blockedRoomsId };
-    dispatch(postUnblockRooms(data))
-      .unwrap()
-      .then((res) => {
-        console.log('Blocked Room Id:', res);
-      })
-      .finally(() => {
-        setIsLoading(false);
-        setBlockedRoomsList([]);
-        unblockRef.current = new Set();
-        closeModal();
-      });
+    if (isLoading) {
+      const unblockRoomSet = unblockRef.current.values();
+      const blockedRoomsId = Array.from(unblockRoomSet);
+      const data = { blockedRoomsId: blockedRoomsId };
+      dispatch(postUnblockRooms(data))
+        .unwrap()
+        .then((res) => {
+          console.log('Blocked Room Id:', res);
+        })
+        .catch((err) => {
+          console.log('Error:', err);
+          setBlockedRoomsList([]);
+          unblockRef.current = new Set();
+        })
+        .finally(() => {
+          setIsLoading(false);
+          closeModal();
+        });
+    }
   }, [isLoading, dispatch, closeModal]);
 
   return (
@@ -59,7 +64,7 @@ const BlockedRoomModal = ({ isOpen, closeModal }) => {
         <span className={styles.close} onClick={closeModal}>
           <CloseSvg />
         </span>
-        <span>Blocked Room</span>
+        <span>{'Blocked Contacts'}</span>
       </nav>
       <ul className={styles.blockedrooms}>
         {blockedRoomsList.map((room) => (
@@ -86,7 +91,7 @@ const BlockedRoomModal = ({ isOpen, closeModal }) => {
           disabled={blockedRoomsList.length > 0 ? false : true}
           onClick={() => setIsLoading(true)}
         >
-          {'Unblock Contact'}
+          {'Unblock'}
         </Button>
       </div>
       <Loader isOpen={isLoading} />

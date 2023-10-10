@@ -5,6 +5,8 @@ import ArrowRightSvg from '../../../components/Svg/ArrowRightSvg';
 import SucceedSvg from '../../../components/Svg/SucceedSvg';
 import styles from './SignupModal.module.css';
 
+Modal.setAppElement('#root');
+
 const SignupModal = ({ isOpen, closeModal }) => {
   const navigate = useNavigate();
 

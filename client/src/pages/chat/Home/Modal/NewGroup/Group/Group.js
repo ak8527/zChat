@@ -83,15 +83,16 @@ const Group = ({
               />
             ))}
           </ul>
-          <Button
-            className={styles.button}
-            onClick={() => {
-              if (newImage) setNewImageUploading(true);
-              else onSubmit();
-            }}
-          >
-            {'Continue'}
-          </Button>
+          <div className={styles.button}>
+            <Button
+              onClick={() => {
+                if (newImage) setNewImageUploading(true);
+                else onSubmit();
+              }}
+            >
+              {'Continue'}
+            </Button>
+          </div>
         </div>
       </div>
       <Loader isOpen={newImageUploading} />

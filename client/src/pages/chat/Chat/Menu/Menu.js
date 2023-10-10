@@ -13,7 +13,13 @@ const Menu = ({ isGroup, onClose, onLeave, onBlock, onNavigate }) => {
           <li onClick={onBlock}>{'Block Contact'}</li>
         )}
       </menu>
-      <div className={styles.overlay} onClick={onClose}></div>
+      <div
+        className={styles.overlay}
+        onClick={(e) => {
+          e.stopPropagation();
+          onClose();
+        }}
+      ></div>
     </>
   );
 };

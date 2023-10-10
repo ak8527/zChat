@@ -38,6 +38,7 @@
   --color-audio: var(--shades-500);
   --color-link: var(--color-primary);
   --color-message: var(--shades-100);
+  --marginImage: 0 0 0 auto;
 }
 
 .message.borderAllRounded {

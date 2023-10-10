@@ -25,17 +25,19 @@ const SearchUser = ({
           onChange={(e) => setNameInput(e.target.value)}
         />
       </div>
-      <ul className={styles.participants}>
-        {participants.map((participant) => (
-          <Participant
-            key={participant._id}
-            user={participant}
-            onClick={() => {
-              onRemoveParticipant(participant);
-            }}
-          />
-        ))}
-      </ul>
+      {participants?.length > 0 && (
+        <ul className={styles.participants}>
+          {participants.map((participant) => (
+            <Participant
+              key={participant._id}
+              user={participant}
+              onClick={() => {
+                onRemoveParticipant(participant);
+              }}
+            />
+          ))}
+        </ul>
+      )}
       <ul className={styles.users}>
         {userList.map((user) => (
           <User

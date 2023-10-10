@@ -13,18 +13,23 @@
   align-items: center;
   width: 100%;
   background: var(--light);
-  /* z-index: 10; */
+  position: sticky;
+  top: 0;
 }
 
 .nav > .onBack {
   display: grid;
   place-items: center;
+  cursor: pointer;
 }
 
 .onBack > svg {
   width: 1rem;
   height: 1rem;
-  cursor: pointer;
+}
+
+.onBack > path {
+  fill: var(--color-primary);
 }
 
 .container .groupInfo {
@@ -68,6 +73,7 @@
 }
 
 .container .button {
-  position: absolute;
+  position: sticky;
   bottom: 0;
+  width: 100%;
 }

@@ -58,6 +58,7 @@ body {
   --color-border-error: var(--danger-500);
   --color-background-error: var(--danger-300);
   --color-error: var(--danger-700);
+  --color-svg: var(--shades-200);
 
   /* Default property */
   color: var(--color-primary-text);

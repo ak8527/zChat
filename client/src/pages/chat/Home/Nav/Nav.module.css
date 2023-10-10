@@ -18,4 +18,5 @@
 .nav > span {
   display: grid;
   place-items: center;
+  cursor: pointer;
 }

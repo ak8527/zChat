@@ -17,10 +17,16 @@
 .nav > .edit {
   margin-left: auto;
   margin-right: 0;
+  color: var(--color-primary);
 }
 
 .nav svg {
   width: 2rem;
   height: 2rem;
   padding: 0.5rem;
+  cursor: pointer;
+}
+
+.nav path {
+  fill: var(--color-primary);
 }

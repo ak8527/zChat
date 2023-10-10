@@ -3,6 +3,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
 .container > .input {
@@ -10,8 +11,9 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  margin-bottom: 0.5rem;
   border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
 }
 
 .container > .participants {
@@ -19,11 +21,11 @@
   flex-wrap: wrap;
   align-content: flex-start;
   gap: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
 }
 
 .container > .users {
-  flex: 100%;
+  flex: 1 1 1px;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -36,12 +38,16 @@
 .input > span {
   display: grid;
   place-items: center;
+  cursor: pointer;
 }
 
 .input svg {
   width: 1rem;
   height: 1rem;
-  cursor: pointer;
+}
+
+.input path {
+  fill: var(--color-border);
 }
 
 .input > input {
@@ -58,4 +64,6 @@
 
 .container > .button {
   padding: 1rem;
+  position: sticky;
+  bottom: 0;
 }
