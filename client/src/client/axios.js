@@ -40,6 +40,7 @@ client.interceptors.response.use(
           ] = `Bearer ${response.data.accessToken}`;
           return axios(originalConfig);
         } catch (err) {
+          console.log('Error:', err);
           return Promise.reject(err);
         }
       }

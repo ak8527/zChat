@@ -19,7 +19,7 @@ const userSchema = new Schema({
   resetPasswordToken: {
     type: String,
   },
-  refreshToken: [String],
+  refreshToken: String,
   lastSeen: {
     type: String,
   },

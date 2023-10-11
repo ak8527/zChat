@@ -20,10 +20,6 @@ export async function postLogin(req, res, next) {
 
     const { accessToken, refreshToken } = await generateToken(user);
 
-    const newRefreshTokenArray = !cookies?.jwt
-      ? user.refreshToken
-      : user.refreshToken.filter((rt) => rt !== cookies?.jwt);
-
     if (cookies?.jwt)
       res.clearCookie('jwt', {
         httpOnly: true,
@@ -31,7 +27,7 @@ export async function postLogin(req, res, next) {
         secure: true,
       });
 
-    user.refreshToken = [...newRefreshTokenArray, refreshToken];
+    user.refreshToken = refreshToken;
     await user.save();
 
     if (remember)
@@ -88,7 +84,7 @@ export async function postLogout(req, res, next) {
 
     const user = await User.findOne({ refreshToken: refreshToken });
     if (user) {
-      user.refreshToken = user.refreshToken.filter((rt) => rt !== refreshToken);
+      user.refreshToken = null;
       await user.save();
     }
 
@@ -126,7 +122,7 @@ export async function getRefreshToken(req, res, next) {
           // attemped refresh token reuse
           const hackedUser = await User.findOne({ email: decoded.email });
           if (hackedUser) {
-            hackedUser.refreshToken = []; // Delete all refresh token for user
+            hackedUser.refreshToken = undefined; // Delete  refresh token for user
             await hackedUser.save();
           }
         }
@@ -134,26 +130,21 @@ export async function getRefreshToken(req, res, next) {
       throw new Error('Forbidden Request');
     }
 
-    const newRefreshTokenArray = user.refreshToken.filter(
-      (rt) => rt !== refreshToken
-    );
-
     // Check RT
     jwt.verify(
       refreshToken,
       process.env.REFRESH_TOKEN_PRIVATE_KEY,
       async (err, decoded) => {
         if (err) {
-          user.refreshToken = [...newRefreshTokenArray];
+          user.refreshToken = undefined;
           await user.save();
-          const error = new Error('Token Expire.');
-          next(error);
+          next('Token expire!!!');
         }
 
         const { accessToken: newAccessToken, refreshToken: newRefreshToken } =
           await generateToken(decoded);
 
-        user.refreshToken = [...newRefreshTokenArray, newRefreshToken];
+        user.refreshToken = newRefreshToken;
         await user.save();
 
         res.cookie('jwt', newRefreshToken, {
