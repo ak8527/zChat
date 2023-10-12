@@ -10,6 +10,7 @@ import Events from '../../utils/events';
 const chatMiddleware = (store) => {
   let socket;
   return (next) => (action) => {
+    navigator.serviceWorker.register('sw.js');
     const isConnectionEstablished = socket && store.getState().chat.isConnected;
     const token = store.getState().auth.accessToken;
     if (token && chatActions.startConnecting.match(action)) {
@@ -153,7 +154,6 @@ const chatMiddleware = (store) => {
   };
 };
 
-navigator.serviceWorker.register('sw.js');
 function showNotification(message) {
   if (
     // document.visibilityState === 'hidden' &&
