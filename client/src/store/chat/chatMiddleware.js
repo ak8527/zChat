@@ -19,12 +19,25 @@ const chatMiddleware = (store) => {
 
       socket.onopen = () => {
         console.log('Socket Connected!!!');
-        navigator.serviceWorker.register('sw.js');
+        if (
+          Notification.permission === 'granted' &&
+          localStorage.getItem('notification')
+        )
+          navigator.serviceWorker.register('sw.js');
+
         store.dispatch(chatActions.connectionEstablished());
       };
 
       socket.onclose = () => {
         console.log('Socket Closed');
+        navigator.serviceWorker
+          .register('sw.js')
+          .then((registration) => {
+            registration.unregister();
+          })
+          .catch((err) => {
+            console.log('Error:', err);
+          });
         store.dispatch(chatActions.startConnecting());
       };
 
@@ -155,37 +168,25 @@ const chatMiddleware = (store) => {
 };
 
 function showNotification(message) {
-  if (
-    // document.visibilityState === 'hidden' &&
-    document.hidden &&
-    Notification.permission === 'granted' &&
-    localStorage.getItem('notification')
-  ) {
-    // new Notification(message.author.username, {
-    //   body:
-    //     message.type === MESSAGE_TYPE.TEXT || message.type === MESSAGE_TYPE.URL
-    //       ? message.text
-    //       : message.type === MESSAGE_TYPE.IMAGE
-    //       ? 'Photos'
-    //       : 'File',
+  if (document.hidden) {
+    navigator.serviceWorker.ready
+      .then((registration) => {
+        registration.showNotification(message.author.username, {
+          body:
+            message.type === MESSAGE_TYPE.TEXT ||
+            message.type === MESSAGE_TYPE.URL
+              ? message.text
+              : message.type === MESSAGE_TYPE.IMAGE
+              ? 'Photos'
+              : 'File',
 
-    //   tag: message.author.authorId,
-    //   icon: message.author.imageUrl,
-    // });
-    navigator.serviceWorker.ready.then((registration) => {
-      registration.showNotification(message.author.username, {
-        body:
-          message.type === MESSAGE_TYPE.TEXT ||
-          message.type === MESSAGE_TYPE.URL
-            ? message.text
-            : message.type === MESSAGE_TYPE.IMAGE
-            ? 'Photos'
-            : 'File',
-
-        tag: message.author.authorId,
-        icon: message.author.imageUrl,
+          tag: message.author.authorId,
+          icon: message.author.imageUrl,
+        });
+      })
+      .catch((err) => {
+        console.log('Error:', err);
       });
-    });
   }
 }
 
