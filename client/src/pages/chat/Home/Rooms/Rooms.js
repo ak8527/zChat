@@ -18,17 +18,13 @@ const Rooms = () => {
   const allRoomMessages = useSelector(getAllMessages);
   const [roomQuery, setRoomQuery] = useState('');
 
-  let searchRoomList = rooms.filter((room) =>
+  const searchRoomList = rooms.filter((room) =>
     room.name.toLowerCase().includes(roomQuery)
   );
 
   useEffect(() => {
     if (rooms.length === 0) dispatch(postRooms());
   }, [dispatch, rooms.length]);
-
-  searchRoomList = [...searchRoomList, ...searchRoomList];
-  searchRoomList = [...searchRoomList, ...searchRoomList];
-  searchRoomList = [...searchRoomList, ...searchRoomList];
 
   return (
     <div className={styles.rooms}>
