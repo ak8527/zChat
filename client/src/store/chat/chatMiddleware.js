@@ -153,6 +153,7 @@ const chatMiddleware = (store) => {
   };
 };
 
+navigator.serviceWorker.register('sw.js');
 function showNotification(message) {
   if (
     // document.visibilityState === 'hidden' &&
@@ -160,16 +161,30 @@ function showNotification(message) {
     Notification.permission === 'granted' &&
     localStorage.getItem('notification')
   ) {
-    new Notification(message.author.username, {
-      body:
-        message.type === MESSAGE_TYPE.TEXT || message.type === MESSAGE_TYPE.URL
-          ? message.text
-          : message.type === MESSAGE_TYPE.IMAGE
-          ? 'Photos'
-          : 'File',
+    // new Notification(message.author.username, {
+    //   body:
+    //     message.type === MESSAGE_TYPE.TEXT || message.type === MESSAGE_TYPE.URL
+    //       ? message.text
+    //       : message.type === MESSAGE_TYPE.IMAGE
+    //       ? 'Photos'
+    //       : 'File',
 
-      tag: message.author.authorId,
-      icon: message.author.imageUrl,
+    //   tag: message.author.authorId,
+    //   icon: message.author.imageUrl,
+    // });
+    navigator.serviceWorker.ready.then((registration) => {
+      registration.showNotification(message.author.username, {
+        body:
+          message.type === MESSAGE_TYPE.TEXT ||
+          message.type === MESSAGE_TYPE.URL
+            ? message.text
+            : message.type === MESSAGE_TYPE.IMAGE
+            ? 'Photos'
+            : 'File',
+
+        tag: message.author.authorId,
+        icon: message.author.imageUrl,
+      });
     });
   }
 }
