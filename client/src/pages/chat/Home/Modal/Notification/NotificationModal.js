@@ -1,19 +1,17 @@
 import Modal from 'react-modal';
 
-import useLocalStorage from '../../../../../hooks/useLocalStorage';
+import * as serviceWorkerRegistration from '../../../../../serviceWorkerRegistration';
 import styles from './NotificationModal.module.css';
 
 const NotificationModal = ({ isOpen, closeModal }) => {
-  const [, setNotification] = useLocalStorage('notification', false);
-
   const requestPermission = () => {
     if (Notification.permission === 'granted') {
-      setNotification(true);
+      serviceWorkerRegistration.register();
       closeModal();
     } else {
       Notification.requestPermission()
         .then((res) => {
-          setNotification(res === 'granted' ? true : false);
+          serviceWorkerRegistration.register();
           closeModal();
         })
         .catch((err) => console.log(err));
@@ -34,7 +32,7 @@ const NotificationModal = ({ isOpen, closeModal }) => {
         <button
           className={`${styles.btn} ${styles.denyBtn}`}
           onClick={() => {
-            setNotification(false);
+            serviceWorkerRegistration.unregister();
             closeModal();
           }}
         >

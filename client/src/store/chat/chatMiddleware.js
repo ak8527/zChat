@@ -19,12 +19,6 @@ const chatMiddleware = (store) => {
 
       socket.onopen = () => {
         console.log('Socket Connected!!!');
-        if (
-          Notification.permission === 'granted' &&
-          localStorage.getItem('notification')
-        )
-          navigator.serviceWorker.register('sw.js');
-
         store.dispatch(chatActions.connectionEstablished());
       };
 
@@ -160,11 +154,7 @@ const chatMiddleware = (store) => {
 };
 
 function showNotification(message) {
-  if (
-    document.hidden &&
-    Notification.permission === 'granted' &&
-    localStorage.getItem(['notification'])
-  ) {
+  if (document.hidden && Notification.permission === 'granted') {
     navigator.serviceWorker.ready
       .then((registration) => {
         registration.showNotification(message.author.username, {
