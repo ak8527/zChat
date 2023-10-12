@@ -65,9 +65,7 @@
 }
 
 .send:hover,
-.send:focus,
-.link:hover,
-.link:focus {
+.link:hover {
   background: var(--color-primary);
   --fill: var(--light);
 }

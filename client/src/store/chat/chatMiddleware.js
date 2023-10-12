@@ -30,14 +30,6 @@ const chatMiddleware = (store) => {
 
       socket.onclose = () => {
         console.log('Socket Closed');
-        navigator.serviceWorker
-          .register('sw.js')
-          .then((registration) => {
-            registration.unregister();
-          })
-          .catch((err) => {
-            console.log('Error:', err);
-          });
         store.dispatch(chatActions.startConnecting());
       };
 
@@ -168,7 +160,11 @@ const chatMiddleware = (store) => {
 };
 
 function showNotification(message) {
-  if (document.hidden) {
+  if (
+    document.hidden &&
+    Notification.permission === 'granted' &&
+    localStorage.getItem(['notification'])
+  ) {
     navigator.serviceWorker.ready
       .then((registration) => {
         registration.showNotification(message.author.username, {
