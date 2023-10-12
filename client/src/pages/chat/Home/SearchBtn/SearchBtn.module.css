@@ -16,7 +16,7 @@
   height: 1.25rem;
 }
 
-.link:active,
+.link:focus,
 .link:hover {
   background: var(--color-primary-dark);
 }

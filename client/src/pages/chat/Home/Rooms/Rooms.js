@@ -44,7 +44,7 @@ const Rooms = () => {
           />
         ))}
       </ul>
-      <SearchBtn />
+      {/* <SearchBtn /> */}
     </div>
   );
 };
