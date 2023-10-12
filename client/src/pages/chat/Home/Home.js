@@ -14,7 +14,7 @@ const Home = () => {
       <div className={styles.home}>
         <Nav />
         <Rooms />
-        <SearchBtn />
+        {/* <SearchBtn /> */}
       </div>
       <div className={styles.outlet}>
         <div className={`${styles.image} ${outlet ? styles.hideImage : ''}`}>

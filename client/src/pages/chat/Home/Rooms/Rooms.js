@@ -8,6 +8,7 @@ import useWindowDimensions from '../../../../hooks/useWindowDimensions';
 import Search from './Search';
 import Room from './Room';
 import styles from './Rooms.module.css';
+import SearchBtn from '../SearchBtn/SearchBtn';
 
 const Rooms = () => {
   const { id } = useParams();
@@ -43,6 +44,7 @@ const Rooms = () => {
           />
         ))}
       </ul>
+      <SearchBtn />
     </div>
   );
 };
