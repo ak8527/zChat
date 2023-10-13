@@ -64,8 +64,10 @@
   fill: var(--fill);
 }
 
-.send:hover,
-.link:hover {
-  background: var(--color-primary);
-  --fill: var(--light);
+@media screen and (min-width: 25rem) {
+  .send:hover,
+  .link:hover {
+    background: var(--color-primary);
+    --fill: var(--light);
+  }
 }
