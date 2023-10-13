@@ -8,7 +8,7 @@ You can view the demo of the app [https://zchat-production.vercel.app].
 
 ## Wireframe
 
-You can view the wireframe of the app (https://www.figma.com/file/oQ3klru9C9aeA1ho3XOXv3/zChat?type=design&node-id=171%3A1010&mode=design&t=kA4uHSblfBXRfnn7-1)[Mobile] && (https://www.figma.com/file/oQ3klru9C9aeA1ho3XOXv3/zChat?type=design&node-id=7%3A9&mode=design&t=kA4uHSblfBXRfnn7-1)[Desktop].
+You can view the wireframe of the app [Mobile](https://www.figma.com/file/oQ3klru9C9aeA1ho3XOXv3/zChat?type=design&node-id=171%3A1010&mode=design&t=kA4uHSblfBXRfnn7-1) && [Desktop](https://www.figma.com/file/oQ3klru9C9aeA1ho3XOXv3/zChat?type=design&node-id=7%3A9&mode=design&t=kA4uHSblfBXRfnn7-1).
 
 ## Technologies
 
