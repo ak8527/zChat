@@ -121,11 +121,6 @@ const initWs = (server) => {
                   ? previousUserSet
                   : newUserSet; // Check if user is deleted or add by measuring size of room set
 
-              // log.warn('Update Room Req: UserSet:', currentSet);
-              // log.warn('Update Room Req: PreivousSet:', previousUserSet);
-              // log.warn('Update Room Req: Users:', room.users);
-              // log.warn('Update Room Req: New UserSet:', newUserSet);
-
               currentSet.forEach((id) => {
                 if (userId !== id)
                   sendData(id, Events.UPDATE_ROOM_RES, {
@@ -169,7 +164,7 @@ const initWs = (server) => {
           case Events.SUBMIT_MESSAGE:
             {
               // Message author id
-              const message = data.message;
+              let message = data.message;
               const author = message.author.authorId;
               // Set of UserId for Given room
               const usersSet = rooms.get(data.roomId);
@@ -177,6 +172,7 @@ const initWs = (server) => {
               log.warn('SubmitMessage:', usersSet);
               if (!usersSet || !usersSet.has(author)) return;
               // Save message to db
+              message.date = Date.now().toString();
               await Room.updateOne(
                 { _id: data.roomId },
                 { $push: { messages: message } }

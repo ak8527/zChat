@@ -161,7 +161,7 @@ function getMessage(user, text, fileInfo) {
       ? MESSAGE_TYPE.AUDIO
       : MESSAGE_TYPE.FILE,
     text: text,
-    date: Date.now().toString(),
+    // date: Date.now().toString(),
     fileMetaData: fileInfo,
   };
 }
