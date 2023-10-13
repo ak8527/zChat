@@ -47,16 +47,15 @@ const CallNotification = ({ receiver, callType, onDeclineCall }) => {
 };
 
 function showNotification(message, receiver) {
-  if (
-    // document.visibilityState === 'hidden' &&
-    document.hidden &&
-    Notification.permission === 'granted' &&
-    localStorage.getItem('notification')
-  ) {
-    new Notification(receiver?.name, {
-      body: message,
-      icon: receiver?.imageUrl,
-    });
+  if (document.hidden && Notification.permission === 'granted') {
+    navigator.serviceWorker.ready
+      .then((registration) => {
+        registration.showNotification(receiver?.name, {
+          body: message,
+          icon: receiver?.imageUrl,
+        });
+      })
+      .then((err) => console.log('Error:', err.message));
   }
 }
 
