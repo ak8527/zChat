@@ -4,11 +4,11 @@ zChat is a web application that allows users to chat with each other in real-tim
 
 ## Demo
 
-You can view the demo of the app [here].
+You can view the demo of the app [https://zchat-production.vercel.app].
 
 ## Wireframe
 
-You can view the wireframe of the app [here].
+You can view the wireframe of the app [https://www.figma.com/file/oQ3klru9C9aeA1ho3XOXv3/zChat?type=design&node-id=171%3A1010&mode=design&t=kA4uHSblfBXRfnn7-1](Mobile) && [https://www.figma.com/file/oQ3klru9C9aeA1ho3XOXv3/zChat?type=design&node-id=7%3A9&mode=design&t=kA4uHSblfBXRfnn7-1](Desktop).
 
 ## Technologies
 
@@ -86,11 +86,3 @@ To install and run the app locally, follow these steps:
 8. Install the dependencies using `npm install`.
 9. Start the client using `npm start`.
 10. Open your browser and go to `http://localhost:3000` to view the app.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE] file for details.
-
-## Contact
-
-If you have any questions or feedback, please contact me at [your email address].
