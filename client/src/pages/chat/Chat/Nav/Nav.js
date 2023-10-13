@@ -179,22 +179,27 @@ const Nav = () => {
           <KebabMenu />
           {showMenu && (
             <Menu
+              key={location.pathname}
               isGroup={room?.isGroup}
-              onClose={() => {
+              onClose={(e) => {
                 console.log('Overlay Click...');
+                e.stopPropagation();
                 setShowMenu(false);
               }}
-              onLeave={() => {
+              onLeave={(e) => {
+                e.stopPropagation();
                 setShowMenu(false);
                 setIsLoading(true);
                 setIsLeave(true);
               }}
-              onBlock={() => {
+              onBlock={(e) => {
+                e.stopPropagation();
                 setShowMenu(false);
                 setIsLoading(true);
                 setIsBlock(true);
               }}
-              onNavigate={() => {
+              onNavigate={(e) => {
+                e.stopPropagation();
                 setShowMenu(false);
                 if (!location.pathname.includes('info'))
                   navigate(`${location.pathname}/info`);
