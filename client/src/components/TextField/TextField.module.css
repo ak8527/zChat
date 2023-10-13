@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 0.25rem;
   width: 100%;
-  align-items: start;
 }
 
 .textField label {
@@ -66,6 +65,7 @@
 .error > p {
   color: var(--color-error);
   font-size: 0.9rem;
+  align-self: flex-start;
 }
 
 .error path {
