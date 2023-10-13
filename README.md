@@ -1,10 +1,10 @@
 # zChat
 
-zChat is a web application that allows users to chat with each other in real-time. Users can create private or group chats, send files, videos, music, photos, and links.Users can also make video calls and audio calls with other users using WebRTC technology.
+zChat is a web application that allows users to chat with each other in real-time. User can create private or group chats, send files, videos, music, photos, and links. User can also make video calls and audio calls with other users using WebRTC technology.
 
 ## Demo
 
-You can view the demo of the app here(https://zchat-production.vercel.app).
+You can view the demo of the app [here](https://zchat-production.vercel.app).
 
 ## Wireframe
 
