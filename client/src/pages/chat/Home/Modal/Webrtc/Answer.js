@@ -91,6 +91,8 @@ const Answer = ({
       }
     };
 
+    pc.oniceconnectionstatechange = (e) => {};
+
     pc.current.ontrack = (e) => {
       remoteVideoRef.current.srcObject = e.streams[0];
     };
@@ -163,13 +165,13 @@ const Answer = ({
   }, [sdp, sendSdp, initConnection]);
 
   useEffect(() => {
-    candidates?.forEach((candidate) => {
-      const parseCandidate = JSON.parse(candidate);
-      if (parseCandidate && pc.current.currentRemoteDescription)
+    if (pc.current.currentRemoteDescription && candidates?.length > 0)
+      candidates.forEach((candidate) => {
+        const parseCandidate = JSON.parse(candidate);
         pc.current
           .addIceCandidate(parseCandidate)
           .catch((err) => console.log('Error:', err.message));
-    });
+      });
   }, [candidates]);
 
   return (
