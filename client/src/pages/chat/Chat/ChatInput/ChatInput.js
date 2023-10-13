@@ -30,7 +30,7 @@ const ChatInput = () => {
         },
         type: isUrl(text) ? MESSAGE_TYPE.URL : MESSAGE_TYPE.TEXT,
         text: text,
-        date: Date.now().toString(),
+        // date: Date.now().toString(),
       },
     };
     inputRef.current.value = '';

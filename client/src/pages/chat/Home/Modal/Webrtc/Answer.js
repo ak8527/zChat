@@ -181,7 +181,12 @@ const Answer = ({
           callType === 'audio' ? styles.hideVideoCall : ''
         }`}
       >
-        <video className={styles.localVideo} ref={localVideoRef} autoPlay />
+        <video
+          className={styles.localVideo}
+          ref={localVideoRef}
+          autoPlay
+          muted
+        />
         <video className={styles.remoteVideo} ref={remoteVideoRef} autoPlay />
       </div>
       {callType === 'audio' && (
